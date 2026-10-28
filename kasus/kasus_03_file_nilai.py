@@ -1,14 +1,10 @@
+def nilai_tertinggi(nilai):
+    if len(nilai) == 0:
+        return None
 
-def baca_nilai(nama_file):
-    with open(nama_file, "r") as file:
-        nilai = []
+    tertinggi = nilai[0]
+    for x in nilai[1:]:
+        if x > tertinggi:
+            tertinggi = x
 
-        for baris in file:
-            nilai.append(int(baris.strip()))
-
-    return nilai
-
-
-data = baca_nilai("data_nilai.txt")
-print("Data nilai:", data)
-print("Rata-rata:", sum(data) / len(data))
+    return tertinggi
